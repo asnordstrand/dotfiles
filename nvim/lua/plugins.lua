@@ -5,8 +5,8 @@ local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 -- Auto install packer.nvim
 if fn.empty(fn.glob(install_path)) > 0 then
-  execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-  execute 'packadd packer.nvim'
+    execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+    execute 'packadd packer.nvim'
 end
 
 -- Required because packer is installed in opt/
@@ -26,8 +26,11 @@ return require('packer').startup(function()
 	use 'Yggdroot/indentLine'
 
 	-- fzf
-	use 'junegunn/fzf'
+	use {'junegunn/fzf', hook = fn['fzf#install']}
 	use 'junegunn/fzf.vim'
+
+    -- Intellisense
+    use {'neoclide/coc.nvim', branch = 'release'}
 
 	-- Rust fuctionality
 	use 'rust-lang/rust.vim'

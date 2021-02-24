@@ -14,4 +14,5 @@ export TERM="xterm-256color"
 export EDITOR="nvim"
 
 # ALIAS
-alias zshconfig="nvim ~/.zshrc"
+alias ec="$EDITOR $HOME/.zshrc"
+alias sc="source $HOME/.zshrc"

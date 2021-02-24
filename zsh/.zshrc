@@ -1,0 +1,17 @@
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/annasnordstrand/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+plugins=(git brew osx zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+
+# EXPORT
+export TERM="xterm-256color"
+export EDITOR="nvim"
+
+# ALIAS
+alias zshconfig="nvim ~/.zshrc"

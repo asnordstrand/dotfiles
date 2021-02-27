@@ -13,31 +13,31 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
-	-- Packer
-	use {'wbthomason/packer.nvim', opt = true}
-	
-	-- Surround for brackets, quotes, etc
-	use 'tpope/vim-surround'
-	
-	-- Git
-	use 'tpope/vim-fugitive'
-	
-	-- Indentation levels
-	use 'Yggdroot/indentLine'
+    -- Packer
+    use {'wbthomason/packer.nvim', opt = true}
 
-	-- fzf
-	use {'junegunn/fzf', hook = fn['fzf#install']}
-	use 'junegunn/fzf.vim'
+    -- Surround for brackets, quotes, etc
+    use 'tpope/vim-surround'
+	
+    -- Git
+    use 'tpope/vim-fugitive'
+
+    -- Indentation levels
+    use 'Yggdroot/indentLine'
+
+    -- fzf
+    use {'junegunn/fzf', hook = fn['fzf#install']}
+    use 'junegunn/fzf.vim'
 
     -- Intellisense
     use {'neoclide/coc.nvim', branch = 'release'}
 
-	-- Rust fuctionality
-	use 'rust-lang/rust.vim'
+    -- Rust fuctionality
+    use 'rust-lang/rust.vim'
 
     -- Swift syntax
     use 'keith/swift.vim'
 
-	-- Color scheme
-	use 'gruvbox-community/gruvbox'
+    -- Color scheme
+    use 'gruvbox-community/gruvbox'
 end)

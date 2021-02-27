@@ -35,6 +35,9 @@ return require('packer').startup(function()
 	-- Rust fuctionality
 	use 'rust-lang/rust.vim'
 
+    -- Swift syntax
+    use 'keith/swift.vim'
+
 	-- Color scheme
 	use 'gruvbox-community/gruvbox'
 end)

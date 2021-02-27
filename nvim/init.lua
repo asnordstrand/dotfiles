@@ -9,6 +9,7 @@ local map = utils.map
 
 -- Color scheme
 opt('o', 'termguicolors', true)
+opt('o', 'background', 'dark')
 cmd [[colorscheme gruvbox]]
 
 -- Settings
@@ -36,5 +37,7 @@ map('n', '<leader>h', '<cmd>History<cr>', {noremap = true})
 g.coc_global_extensions = {
     'coc-pairs',
     'coc-clangd',
-    'coc-rust-analyzer'
+    'coc-rust-analyzer',
+    'coc-sourcekit',
+    'coc-json',
 }

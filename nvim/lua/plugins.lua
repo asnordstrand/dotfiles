@@ -1,43 +1,28 @@
-local fn = vim.fn
 local execute = vim.api.nvim_command
+local fn = vim.fn
+local cmd = vim.cmd
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 -- Auto install packer.nvim
 if fn.empty(fn.glob(install_path)) > 0 then
-    execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-    execute 'packadd packer.nvim'
+	execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+	execute('packadd packer.nvim')
 end
 
 -- Required because packer is installed in opt/
-vim.cmd [[packadd packer.nvim]]
+cmd [[packadd packer.nvim]]
+
+-- Automatically run :PackerCompile when plugins.lua changes
+cmd 'autocmd BufWritePost plugins.lua PackerCompile'
 
 return require('packer').startup(function()
-    -- Packer
-    use {'wbthomason/packer.nvim', opt = true}
+	-- Packer
+	use { 'wbthomason/packer.nvim', opt = true }
+  
+  -- Intellisense
+  use {'neoclide/coc.nvim', branch = 'release'}
 
-    -- Surround for brackets, quotes, etc
-    use 'tpope/vim-surround'
-	
-    -- Git
-    use 'tpope/vim-fugitive'
-
-    -- Indentation levels
-    use 'Yggdroot/indentLine'
-
-    -- fzf
-    use {'junegunn/fzf', hook = fn['fzf#install']}
-    use 'junegunn/fzf.vim'
-
-    -- Intellisense
-    use {'neoclide/coc.nvim', branch = 'release'}
-
-    -- Rust fuctionality
-    use 'rust-lang/rust.vim'
-
-    -- Swift syntax
-    use 'keith/swift.vim'
-
-    -- Color scheme
-    use 'gruvbox-community/gruvbox'
+	-- Color scheme
+	use 'lifepillar/vim-gruvbox8'
 end)

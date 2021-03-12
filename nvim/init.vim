@@ -1,57 +1,9 @@
-" Auto install vim-plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-	    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
-" Specify a directory for plugins
-call plug#begin(expand('~/.config/nvim/plugged'))
-
-Plug 'gruvbox-community/gruvbox'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'Yggdroot/indentLine'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'rust-lang/rust.vim'
-
-" Initialize plugin system
-call plug#end()
-
-set termguicolors
-colorscheme gruvbox
-
-syntax on
-set encoding=utf-8
-set number
-set cursorline
-set incsearch
-set ignorecase
-set laststatus=2
+lua require('init')
 
 highlight clear SignColumn
 
-filetype plugin indent on
-set tabstop=4 softtabstop=4 shiftwidth=4 autoindent
-set expandtab smarttab
-
 " File-type specific configurations
 autocmd FileType rust let b:coc_pairs_disabled = ["'"]
-
-" FZF mappings
-nmap <Leader>f :GFiles<CR>
-nmap <Leader>F :Files<CR>
-nmap <Leader>b :Buffers<CR>
-nmap <Leader>h :History<CR>
-
-" Coc configuration
-let g:coc_global_extensions = [
-    \'coc-pairs',
-    \'coc-clangd',
-    \'coc-rust-analyzer',
-    \]
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -195,7 +147,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.

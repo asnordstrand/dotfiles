@@ -32,38 +32,18 @@ local function try_loadstring(s, component, name)
 end
 
 _G.packer_plugins = {
-  fzf = {
+  ["coc.nvim"] = {
     loaded = true,
-    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/fzf"
-  },
-  ["fzf.vim"] = {
-    loaded = true,
-    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/fzf.vim"
-  },
-  gruvbox = {
-    loaded = true,
-    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/gruvbox"
-  },
-  indentLine = {
-    loaded = true,
-    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/indentLine"
+    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/coc.nvim"
   },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
-  ["rust.vim"] = {
+  ["vim-gruvbox8"] = {
     loaded = true,
-    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/rust.vim"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/vim-fugitive"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/vim-gruvbox8"
   }
 }
 

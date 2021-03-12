@@ -35,10 +35,10 @@ cmd 'set signcolumn=yes'
 
 -- coc.nvim extensions
 g.coc_global_extensions = {
-    'coc-pairs',
-    'coc-rust-analyzer',
-    'coc-css',
-    'coc-html',
-    'coc-json',
-    'coc-tsserver',
+  'coc-pairs',
+  'coc-rust-analyzer',
+  'coc-css',
+  'coc-html',
+  'coc-json',
+  'coc-tsserver',
 }

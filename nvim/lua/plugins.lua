@@ -6,8 +6,8 @@ local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 
 -- Auto install packer.nvim
 if fn.empty(fn.glob(install_path)) > 0 then
-	execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-	execute('packadd packer.nvim')
+  execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+  execute('packadd packer.nvim')
 end
 
 -- Required because packer is installed in opt/
@@ -17,12 +17,12 @@ cmd [[packadd packer.nvim]]
 cmd 'autocmd BufWritePost plugins.lua PackerCompile'
 
 return require('packer').startup(function()
-	-- Packer
-	use { 'wbthomason/packer.nvim', opt = true }
+  -- Packer
+  use { 'wbthomason/packer.nvim', opt = true }
   
   -- Intellisense
   use {'neoclide/coc.nvim', branch = 'release'}
 
-	-- Color scheme
-	use 'lifepillar/vim-gruvbox8'
+  -- Color scheme
+  use 'lifepillar/vim-gruvbox8'
 end)

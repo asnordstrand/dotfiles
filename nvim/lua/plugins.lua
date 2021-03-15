@@ -21,7 +21,18 @@ return require('packer').startup(function()
   use { 'wbthomason/packer.nvim', opt = true }
   
   -- Intellisense
-  use {'neoclide/coc.nvim', branch = 'release'}
+  use {
+    'neoclide/coc.nvim',
+    branch = 'release',
+    config = [[require('config.coc')]],
+  }
+
+  -- Fuzzy finder
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', },
+    config = [[require('config.telescope')]],
+  }
 
   -- Color scheme
   use 'lifepillar/vim-gruvbox8'

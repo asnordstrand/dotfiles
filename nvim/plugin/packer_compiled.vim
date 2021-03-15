@@ -33,6 +33,7 @@ end
 
 _G.packer_plugins = {
   ["coc.nvim"] = {
+    config = { "require('config.coc')" },
     loaded = true,
     path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/coc.nvim"
   },
@@ -41,12 +42,29 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  ["telescope.nvim"] = {
+    config = { "require('config.telescope')" },
+    loaded = true,
+    path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
   ["vim-gruvbox8"] = {
     loaded = true,
     path = "/Users/annasnordstrand/.local/share/nvim/site/pack/packer/start/vim-gruvbox8"
   }
 }
 
+-- Config for: telescope.nvim
+require('config.telescope')
+-- Config for: coc.nvim
+require('config.coc')
 END
 
 catch

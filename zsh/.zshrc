@@ -16,3 +16,8 @@ export EDITOR="nvim"
 # ALIAS
 alias ec="$EDITOR $HOME/.zshrc"
 alias sc="source $HOME/.zshrc"
+alias pls="sudo"
+alias cl="clear"
+alias nv="nvim"
+alias ..="cd ../"
+alias ...="cd .../"

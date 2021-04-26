@@ -1,39 +1,58 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
-local cmd = vim.cmd
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
 
--- Auto install packer.nvim
 if fn.empty(fn.glob(install_path)) > 0 then
-  execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-  execute('packadd packer.nvim')
+  execute("!git clone https://github.com/wbthomason/packer.nvim "..install_path)
 end
 
--- Required because packer is installed in opt/
-cmd [[packadd packer.nvim]]
-
 -- Automatically run :PackerCompile when plugins.lua changes
-cmd 'autocmd BufWritePost plugins.lua PackerCompile'
+vim.cmd [[autocmd BufWritePost plugins.lua PackerCompile]]
 
-return require('packer').startup(function()
-  -- Packer
-  use { 'wbthomason/packer.nvim', opt = true }
-  
-  -- Intellisense
+return require("packer").startup(function()
+  -- Packer can manage itself
+  use "wbthomason/packer.nvim"
+
+  -- LSP
+  use { "neovim/nvim-lspconfig", config = [[require("config.lsp")]], }
+
+  -- Adds :LspInstall <language>
+  use "kabouzeid/nvim-lspinstall"
+
+  -- Autocompletion
   use {
-    'neoclide/coc.nvim',
-    branch = 'release',
-    config = [[require('config.coc')]],
+    "hrsh7th/nvim-compe",
+    requires = { "hrsh7th/vim-vsnip" },
+    config = [[require("config.compe")]],
+  }
+
+  -- Tree-sitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = [[require("config.treesitter")]],
   }
 
   -- Fuzzy finder
   use {
-    'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', },
-    config = [[require('config.telescope')]],
+    "nvim-telescope/telescope.nvim",
+    requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim", },
+    config = [[require("config.telescope")]],
   }
 
+  -- Autopairs
+  use { "windwp/nvim-autopairs", config = [[require("config.npairs")]], }
+
+  -- Statusline
+  use { "hoob3rt/lualine.nvim", config = [[require("config.lualine")]], }
+
+  -- Git integration
+  use "tpope/vim-fugitive"
+
+  -- Indentation lines
+  use "Yggdroot/indentLine"
+
   -- Color scheme
-  use 'lifepillar/vim-gruvbox8'
+  use "lifepillar/vim-gruvbox8"
 end)

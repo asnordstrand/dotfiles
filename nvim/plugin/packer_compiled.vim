@@ -136,30 +136,30 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
--- Config for: nvim-lspconfig
-time("Config for nvim-lspconfig", true)
-require("config.lsp")
-time("Config for nvim-lspconfig", false)
 -- Config for: nvim-treesitter
 time("Config for nvim-treesitter", true)
 require("config.treesitter")
 time("Config for nvim-treesitter", false)
--- Config for: telescope.nvim
-time("Config for telescope.nvim", true)
-require("config.telescope")
-time("Config for telescope.nvim", false)
 -- Config for: nvim-autopairs
 time("Config for nvim-autopairs", true)
 require("config.npairs")
 time("Config for nvim-autopairs", false)
--- Config for: lualine.nvim
-time("Config for lualine.nvim", true)
-require("config.lualine")
-time("Config for lualine.nvim", false)
+-- Config for: nvim-lspconfig
+time("Config for nvim-lspconfig", true)
+require("config.lsp")
+time("Config for nvim-lspconfig", false)
 -- Config for: nvim-compe
 time("Config for nvim-compe", true)
 require("config.compe")
 time("Config for nvim-compe", false)
+-- Config for: lualine.nvim
+time("Config for lualine.nvim", true)
+require("config.lualine")
+time("Config for lualine.nvim", false)
+-- Config for: telescope.nvim
+time("Config for telescope.nvim", true)
+require("config.telescope")
+time("Config for telescope.nvim", false)
 if should_profile then save_profiles() end
 
 END

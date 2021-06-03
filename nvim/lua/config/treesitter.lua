@@ -1,10 +1,11 @@
 require("nvim-treesitter.configs").setup {
   ensure_installed = "maintained",
+  ignore_install = { "python" },
   highlight = {
     enable = true,
   },
   indent = {
     enable = true,
-    disable = { "cpp", "rust", "lua" },
+    disable = { "cpp", "rust", "lua", "python" },
   },
 }

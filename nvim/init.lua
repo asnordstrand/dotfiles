@@ -24,7 +24,7 @@ vim.o.laststatus = 2
 -- Indentation overrides
 vim.api.nvim_command([[
   augroup file_type_indentation
-    autocmd FileType c,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4
-    autocmd FileType rust setlocal tabstop=4 shiftwidth=4 softtabstop=4
+    autocmd FileType c,cpp setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+    autocmd FileType rust setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
   augroup end
 ]])

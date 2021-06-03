@@ -55,4 +55,5 @@ return require("packer").startup(function()
 
   -- Color scheme
   use "lifepillar/vim-gruvbox8"
+  use "nanotech/jellybeans.vim"
 end)

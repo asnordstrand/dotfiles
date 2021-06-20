@@ -46,6 +46,12 @@ return require("packer").startup(function()
 
   -- Statusline
   use { "hoob3rt/lualine.nvim", config = [[require("config.lualine")]], }
+  
+  -- File explorer
+  use { "kyazdani42/nvim-tree.lua", config = [[require("config.tree")]] }
+  
+  -- File icons
+  use "kyazdani42/nvim-web-devicons"
 
   -- Git integration
   use "tpope/vim-fugitive"
@@ -55,5 +61,4 @@ return require("packer").startup(function()
 
   -- Color scheme
   use "lifepillar/vim-gruvbox8"
-  use "nanotech/jellybeans.vim"
 end)
